@@ -4,7 +4,6 @@ import com.gk.tradingpit.controller.dto.request.ClientClickDto;
 import com.gk.tradingpit.controller.dto.request.ClientConversionDto;
 import com.gk.tradingpit.persistance.entity.AffiliateClientMap;
 import com.gk.tradingpit.persistance.entity.AffiliateTransaction;
-import com.gk.tradingpit.persistance.enums.OperationType;
 import com.gk.tradingpit.persistance.repository.AffiliateTransactionsRepository;
 import com.gk.tradingpit.service.exceptions.EntityNotFoundException;
 import com.gk.tradingpit.service.exercise_tap.ExerciseTapService;

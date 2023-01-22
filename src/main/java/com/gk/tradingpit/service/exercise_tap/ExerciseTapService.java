@@ -89,14 +89,12 @@ public class ExerciseTapService {
         try {
             logger.info("Conversation retrieving dto {}", clientConversionDto.getClientId());
             ExerciseTapConversionResponse exerciseTapClick;
-
             if(simulateByMockingResp) {
                 exerciseTapClick = new Gson().fromJson(Files.newBufferedReader(Paths.get(getClass().getClassLoader().getResource(getConversionFilePath).getPath())),
                         ExerciseTapConversionResponse.class);
             } else {
                 exerciseTapClick = mainTemplate.postForObject(POST_CONVERSATION, exerciseTapConversion, ExerciseTapConversionResponse.class);
             }
-
             if(exerciseTapClick == null) throw new ApiClickExternalException("Null response from click to external service");
             Integer conversationId = exerciseTapClick.getId();
             Integer amount = CollectionUtils.isEmpty(exerciseTapClick.getCommissions()) ? -1 : exerciseTapClick.getCommissions().get(0).getAmount();
