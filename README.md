@@ -21,4 +21,4 @@ Deployment
 ## Implementation notices
 -  Since we received API calls directly from the callers `userAgent` and `ip` properties I removed from the payload and catch them internally from the request and headers param. IDK how much you like it guys but it decreases the payload size and helps us to avoid of manual setup of `IP` property
 
-- Database credentials are passed as environment variables for prod, for local running you need to configure your local credentials and change the provile to `dev` 
+- Database credentials are passed as environment variables for prod, for local running you need to configure your local credentials and change the spring profile to `dev` 
